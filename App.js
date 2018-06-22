@@ -1,23 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
+import { styles } from './style/stylesheet';
+
+import ControlButton from './components/ControlButton';
+import Grid from './components/Grid';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tile: 0,
+    };
+  }
+
+  componentDidMount() {
+    StatusBar.setHidden(true);
+    setInterval(() => this.setState(prevState => ({ tile: (prevState.tile + 1) % 9 })), 400);
+  }
+
   render() {
+    const { tile } = this.state;
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Grid litTile={tile} />
+        <View style={styles.fxHorizontal}>
+          <ControlButton title="Position match" onPress={() => {}} />
+          <ControlButton title="Audio match" onPress={() => {}} />
+        </View>
+        <Text>
+          Shake your phone to open the developer menu.
+        </Text>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

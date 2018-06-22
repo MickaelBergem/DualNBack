@@ -1,0 +1,12 @@
+extends:
+  - "plugin:react/recommended"
+  - "plugin:react-native/all"
+  - "airbnb"
+env:
+  node: true # this is the best starting point
+  browser: true # for react web
+  es6: true # enables es6 features
+  jest: true
+parser: babel-eslint
+rules:
+   react/jsx-filename-extension: [ "warn", { "extensions": [ ".js", ".jsx" ] } ]
