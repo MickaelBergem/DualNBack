@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import { styles, colors } from '../style/stylesheet';
-
-const GRID_SIZE = 3;
+import { GRID_SIZE } from '../config';
 
 const Grid = ({ litTile }) => (
   <View style={styles.gridContainer}>

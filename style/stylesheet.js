@@ -8,14 +8,20 @@ const colors = {
   gray: '#696969',
   white: '#fff',
   blue: '#82ccdd',
+  darkBlue: '#60a3bc',
   red: '#eb2f06',
+
+  lightOrange: '#f6b93b',
+  green: '#079992',
 };
 
 // Bindings
 colors.controlButton = colors.blue;
+colors.controlButtonPressed = colors.darkBlue;
 colors.tileColor = colors.black;
 colors.tileBorder = colors.gray;
 colors.tileLitColor = colors.red;
+colors.colorsChannel = [colors.red, colors.lightOrange, colors.green, colors.blue, colors.white];
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +29,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.darkGray,
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  fxAround: {
+    flex: 1,
+    justifyContent: 'space-around',
+  },
+  padded: {
+    padding: 20,
   },
   text: {
     color: colors.white,
@@ -54,6 +67,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.tileLitColor,
     borderWidth: 1,
     borderColor: colors.tileBorder,
+  },
+  Score__pre: {
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  Score__value: {
+    fontSize: 60,
+    textAlign: 'center',
   },
 });
 

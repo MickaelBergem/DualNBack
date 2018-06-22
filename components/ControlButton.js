@@ -4,12 +4,12 @@ import { Button, View } from 'react-native';
 
 import { styles, colors } from '../style/stylesheet';
 
-const ControlButton = ({ title, onPress }) => (
+const ControlButton = ({ title, onPress, pressed }) => (
   <View style={styles.controlButton}>
     <Button
       onPress={onPress}
       title={title}
-      color={colors.controlButton}
+      color={pressed ? colors.controlButtonPressed : colors.controlButton}
       style={styles.controlButton__btn}
     />
   </View>
@@ -18,6 +18,11 @@ const ControlButton = ({ title, onPress }) => (
 ControlButton.propTypes = {
   title: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
+  pressed: PropTypes.bool,
+};
+
+ControlButton.defaultProps = {
+  pressed: false,
 };
 
 export default ControlButton;
