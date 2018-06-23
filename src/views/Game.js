@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Text, View } from 'react-native';
+
 import { styles } from '../style/stylesheet';
+import { GRID_SIZE, DELAY_RESPONSE } from '../config';
+import SingleNBackEngine from '../engine/SingleNBackEngine';
+
+import { gameFinished } from '../actions';
 
 import ControlButton from '../components/ControlButton';
 import Grid from '../components/Grid';
 
-import { GRID_SIZE, DELAY_RESPONSE } from '../config';
 
-import SingleNBackEngine from '../engine/SingleNBackEngine';
-
-class App extends React.Component {
+class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,9 +48,11 @@ class App extends React.Component {
       audioPressed: false,
     });
     if (finished) {
-      const { gameFinished } = this.props;
-      gameFinished(this.engine.getScore());
+      const { gameFinishedCb, navigation } = this.props;
+      const score = this.engine.getScore();
+      gameFinishedCb(score);
       clearInterval(this.interval);
+      navigation.navigate('Score', { score });
     } else {
       // Light a new tile
       this.lightTile(this.engine.generateNextStep());
@@ -96,9 +101,20 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+Game.propTypes = {
   N: PropTypes.number.isRequired,
-  gameFinished: PropTypes.func.isRequired,
+  gameFinishedCb: PropTypes.func.isRequired,
 };
 
-export default App;
+const mapStateToProps = state => ({
+  N: state.game.level,
+});
+
+const mapDispatchToProps = dispatch => ({
+  gameFinishedCb: score => dispatch(gameFinished(score)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Game);
