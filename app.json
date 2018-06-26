@@ -2,8 +2,11 @@
   "expo": {
     "sdkVersion": "27.0.0",
     "name": "Dual N Back",
+    "icon": "./icon256.png",
+    "primaryColor": "#fff5f4",
     "description": "Muscle your working memory with the Dual N Back game! Scientifically proved since 2008, see https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2383929/",
     "version": "0.1.0",
+    "updates": {"fallbackToCacheTimeout": 0},
     "slug": "dual-n-back",
     "android": {
       "package": "com.securem.dualnback"
