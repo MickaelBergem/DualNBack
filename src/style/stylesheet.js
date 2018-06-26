@@ -5,10 +5,11 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const colors = {
   black: '#000',
   darkGray: '#2b2b2b',
+  lightGray: '#eee',
   gray: '#696969',
   white: '#fff',
-  blue: '#82ccdd',
-  darkBlue: '#60a3bc',
+  blue: '#62a8fb',
+  darkBlue: '#1f6cc7',
   red: '#eb2f06',
 
   lightOrange: '#f6b93b',
@@ -16,8 +17,10 @@ const colors = {
 };
 
 // Bindings
-colors.controlButton = colors.blue;
+colors.primaryButton = colors.blue;
+colors.secondaryButton = colors.lightGray;
 colors.controlButtonPressed = colors.darkBlue;
+
 colors.tileColor = colors.black;
 colors.tileBorder = colors.gray;
 colors.tileLitColor = colors.red;
@@ -37,18 +40,35 @@ const styles = StyleSheet.create({
   padded: {
     padding: 20,
   },
+  title: {
+    fontSize: 50,
+  },
   text: {
     color: colors.white,
   },
   fxHorizontal: {
     flexDirection: 'row',
   },
+  button: {
+    padding: 10,
+    minWidth: 150,
+    borderRadius: 4,
+    margin: 5,
+  },
+  buttonTitle: {
+    color: colors.white,
+  },
+  primaryButton: {
+    backgroundColor: colors.primaryButton,
+  },
+  secondaryButton: {
+    backgroundColor: colors.secondaryButton,
+  },
+  pressedButton: {
+    backgroundColor: colors.controlButtonPressed,
+  },
   controlButton: {
     width: 150,
-    padding: 5,
-  },
-  controlButton__btn: {
-    height: 50,
   },
   gridContainer: {
     borderColor: colors.tileBorder,

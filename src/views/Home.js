@@ -1,15 +1,19 @@
 import React from 'react';
-import { Text, Button, View } from 'react-native';
+import { Text, View } from 'react-native';
+
 import { styles } from '../style/stylesheet';
+import Button from '../components/Button';
 
 const Home = ({ navigation }) => (
   <View style={[styles.container, styles.fxAround]}>
-    <Text style={[styles.text]}>
+    <View>
+      <Text style={[styles.text, styles.title]}>
       Dual N Back
-    </Text>
-    <Text style={[styles.text]}>
+      </Text>
+      <Text style={[styles.text]}>
       Muscle your brain
-    </Text>
+      </Text>
+    </View>
     <Button
       title="Start"
       onPress={() => navigation.push('Game')}

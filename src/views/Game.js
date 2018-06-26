@@ -9,6 +9,7 @@ import SingleNBackEngine from '../engine/SingleNBackEngine';
 
 import { gameFinished } from '../actions';
 
+import Button from '../components/Button';
 import ControlButton from '../components/ControlButton';
 import Grid from '../components/Grid';
 
@@ -87,7 +88,7 @@ class Game extends React.Component {
           </View>
         ) : (
           <View style={styles.fxHorizontal}>
-            <ControlButton
+            <Button
               title="Start game"
               onPress={() => this.startGame()}
             />

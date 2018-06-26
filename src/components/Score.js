@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, Button } from 'react-native';
+import { Text, View } from 'react-native';
+import Button from './Button';
 
 import { styles } from '../style/stylesheet';
 

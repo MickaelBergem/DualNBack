@@ -1,18 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, View } from 'react-native';
-
-import { styles, colors } from '../style/stylesheet';
+import Button from './Button';
 
 const ControlButton = ({ title, onPress, pressed }) => (
-  <View style={styles.controlButton}>
-    <Button
-      onPress={onPress}
-      title={title}
-      color={pressed ? colors.controlButtonPressed : colors.controlButton}
-      style={styles.controlButton__btn}
-    />
-  </View>
+  <Button
+    onPress={onPress}
+    title={title}
+    level={pressed ? 'pressed' : 'primary'}
+  />
 );
 
 ControlButton.propTypes = {
