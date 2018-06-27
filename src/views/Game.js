@@ -102,6 +102,11 @@ class Game extends React.Component {
   }
 }
 
+Game.navigationOptions = {
+  title: 'Game',
+  header: null,
+};
+
 Game.propTypes = {
   N: PropTypes.number.isRequired,
   gameFinishedCb: PropTypes.func.isRequired,

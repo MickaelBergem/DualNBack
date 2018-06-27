@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { computeNextLevel } from './engine/scores';
+import { computeNextLevel, saveScore } from './engine/scores';
 
 const defaultState = {
   level: 2,
@@ -8,7 +8,7 @@ const defaultState = {
 const game = (state = defaultState, action) => {
   switch (action.type) {
     case 'GAME_FINISHED':
-      // TODO: update level if score is beyond limits
+      saveScore(action.score, state.level);
       return {
         level: computeNextLevel(action.score, state.level),
       };

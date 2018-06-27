@@ -50,7 +50,7 @@ Engine.prototype.handleResponse = (positionPressed) => {
 Engine.prototype.computeRatio = () => {
   const hit = this.positionHit;
   const miss = this.positionMiss;
-  return (this.stepNumber === 0) ? 1.0 : Math.round(100 * hit / (hit + miss)) / 100.0;
+  return ((hit + miss) === 0) ? 1.0 : Math.round(100 * hit / (hit + miss)) / 100.0;
 };
 
 Engine.prototype.getScore = () => ({

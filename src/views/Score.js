@@ -10,4 +10,8 @@ const ScoreView = ({ navigation }) => {
   return <Score score={score} nextGameCb={() => navigation.push('Game')} />;
 };
 
+ScoreView.navigationOptions = {
+  header: null,
+};
+
 export default ScoreView;

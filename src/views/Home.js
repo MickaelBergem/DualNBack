@@ -14,11 +14,22 @@ const Home = ({ navigation }) => (
       Muscle your brain
       </Text>
     </View>
-    <Button
-      title="Start"
-      onPress={() => navigation.push('Game')}
-    />
+    <View>
+      <Button
+        title="Start"
+        onPress={() => navigation.push('Game')}
+      />
+      <Button
+        title="Stats"
+        onPress={() => navigation.push('Stats')}
+      />
+    </View>
   </View>
 );
+
+Home.navigationOptions = {
+  title: 'Home',
+  header: null,
+};
 
 export default Home;

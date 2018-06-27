@@ -23,6 +23,7 @@ const babelLoaderConfiguration = {
     path.resolve(appDirectory, 'node_modules/@expo/samples'),
     path.resolve(appDirectory, 'node_modules/@expo/vector-icons'),
     path.resolve(appDirectory, 'node_modules/react-native-platform-touchable'),
+    path.resolve(appDirectory, 'node_modules/react-native-storage'),
   ],
   use: {
     loader: 'babel-loader',
@@ -78,7 +79,7 @@ const ttfLoaderConfiguration = {
 
 module.exports = {
   // your web-specific entry file
-  entry: path.resolve(appDirectory, 'src/index.js'),
+  entry: path.resolve(appDirectory, 'src/index.web.js'),
   devtool: 'eval',
 
   // configures where the build ends up
