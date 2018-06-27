@@ -16,9 +16,9 @@
    id="svg8"
    sodipodi:docname="icon.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   inkscape:export-filename="/home/suixo/Projets/mobile/DualNBack/icon256.png"
-   inkscape:export-xdpi="25.4"
-   inkscape:export-ydpi="25.4">
+   inkscape:export-filename="/home/suixo/Projets/mobile/DualNBack/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+   inkscape:export-xdpi="14.29"
+   inkscape:export-ydpi="14.29">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -34,11 +34,11 @@
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1016"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="877"
+     inkscape:window-height="435"
+     inkscape:window-x="1024"
+     inkscape:window-y="1250"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
